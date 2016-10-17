@@ -1,0 +1,120 @@
+<html ng-app="taskManagerApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Meeting Scheduler</title>
+<link href='./css/style.css' rel="stylesheet" type="text/css" />
+<link href='./css/css/font-awesome.css' rel="stylesheet" type="text/css" />
+
+<link rel='stylesheet' href='./css/angularjs-datetime-picker.css'
+	type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+<script data-require="angular.js@*" data-semver="1.3.16"
+	src="./js/angular.js"></script>
+<script data-require="angular-animate@*" data-semver="1.3.16"
+	src="https://code.angularjs.org/1.3.16/angular-animate.js"></script>
+
+<script type="text/javascript" src="./js/angularjs-datetime-picker.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+
+</head>
+<body>
+
+	<div ng-controller="taskManagerController">
+		<h2 class="page-title">Meeting Scheduler using Spring Boot,
+			Spring Data REST &amp; AngularJS</h2>
+		<h4 class="page-title">
+			by <a href="">Surith Nivas</a>
+		</h4>
+
+		<div id="task-panel" class="fadein fadeout showpanel panel"
+			ng-show="toggle">
+			<div class="panel-heading">
+				<i class="panel-title-icon fa fa-tasks"></i>
+				<div>
+					<span class="panel-title">Meetings</span>
+				</div>
+
+				<div class="panel-heading-controls">
+					<button id="editVie" ng-click="toggle = !toggle" class="btn-panel">Schedule
+						Meeting</button>
+
+				</div>
+			</div>
+			<div class="panel-body">
+				<table>
+					<tr>
+						<td class="action-status">Meeting</td>
+						<td class="action-status">Start Time</td>
+						<td class="action-status">End Time</td>
+					</tr>
+					<tr ng-repeat="meeting in meetings">
+						<td>{{ meeting.mName }}</td>
+						<td>{{ meeting.startTime }}</td>
+						<td>{{ meeting.endTime }}</td>
+						<td>
+							<button ng-click="removeTask(meeting._links.self.href)"
+								class="btn-panel">Delete</button>
+						</td>
+						<td>
+							<button ng-click="editView(meeting._links.self.href)" class="btn-panel">Edit</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="add-task-panel" class="fadein fadeout addpanel panel"
+			ng-hide="toggle">
+			<div class="panel-heading">
+				<i class="panel-title-icon fa fa-plus"></i> <span
+					class="panel-title">Schedule Meeting</span>
+				<div class="panel-heading-controls">
+					<button ng-click="toggle = !toggle" class="btn-panel">Show
+						All Meetings</button>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="meeting">
+					<table class="add-task">
+						<tr>
+							<td>Meeting Title :</td>
+							<td><input type="text" ng-model="mName" placeholder="meeting title..."/></td>
+						</tr>
+						<tr>
+							<td>Start Time :</td>
+							<td><input ng-model="startTime"
+								datetime-picker="datetime-picker" size="30"
+								placeholder="enter start time" /></td>
+						</tr>
+						<tr>
+							<td>End Time:</td>
+							<td><input ng-model="endTime"
+								datetime-picker="datetime-picker" size="30"
+								placeholder="enter end time" /></td>
+						</tr>
+						<tr>
+							<td>Employees:</td>
+							<td><select ng-model="eId"
+								ng-options="employee.name for employee in employees track by employee._links.self.href">
+									<option value="">-- Select --</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td>Rooms:</td>
+							<td><select ng-model="rId"
+								ng-options="room.rName for room in rooms track by room._links.self.href">
+									<option value="">-- Select --</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td><br />
+								<button ng-click="addTask()" class="btn-panel-big">Schedule
+									New Meeting</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
