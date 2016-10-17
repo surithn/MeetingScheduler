@@ -1,6 +1,6 @@
 {
   "name": "Meetingscheduler",
-  "tagline": "Use Spring Boot, Spring Data Rest and Angular 2 to perform CRUD operations against Scheduling a Meeting and blocking a Room",
-  "body": "### Welcome to Meeting Scheduler.\r\nThis is a Single Page Application aimed at Scheduling a Corporate meeting.  \r\nTechnology Stack: Spring Boot, Spring Data Rest, AngularJS, Maven\r\n\r\n### Templates\r\n\r\n\r\n### Authors and Contributors\r\nSurith Nivas (@surithn)\r\n\r\n### Support or Contact\r\nHaving trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.\r\n",
+  "tagline": "Spring Boot, Spring Data Rest and Angular JS to perform CRUD operations against Scheduling a Meeting and blocking a Room",
+  "body": "### Welcome to Meeting Scheduler.\r\nThis is a Single Page Application aimed at Scheduling a Corporate meeting.  \r\nTechnology Stack: Spring Boot, Spring Data Rest, AngularJS, Maven\r\n\r\n### Templates\r\n## **Home Page**\r\n**https://localhost:8080/home**\r\n\r\n![Home Page](https://github.com/surithn/MeetingScheduler/blob/master/homePage.png)\r\n\r\n## **Schedule Meeting Page**\r\nClick button Schedule Meeting\r\n\r\n![Schedule Meeting Page](https://github.com/surithn/MeetingScheduler/blob/master/ScheduleMeetingPage.png)\r\n\r\n### Authors and Contributors\r\nSurith Nivas (@surithn)\r\n\r\n### Support or Contact\r\nHaving trouble with Page? Check out [Wiki](https://github.com/surithn/MeetingScheduler/wiki) or [contact support](https://github.com/contact) and we’ll help you sort it out.\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
