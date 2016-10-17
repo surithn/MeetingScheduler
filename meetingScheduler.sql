@@ -4,18 +4,21 @@ show databases;
 create database AZ;
 use AZ;
 
+--Employee Table
 Create table employee(
     e_id int(3) NOT NULL AUTO_INCREMENT, 
     e_name VARCHAR(100) NOT NULL, 
     primary key (e_id)
 );
 
+--Rooms Table
 Create table rooms(
     r_id int(3) NOT NULL AUTO_INCREMENT, 
     r_name VARCHAR(100) NOT NULL, 
     primary key (r_id)
 );
 
+--Meeting Table
 Create table meeting(
     m_id int(3) NOT NULL AUTO_INCREMENT, 
     start_time VARCHAR(100) not null,
@@ -24,6 +27,8 @@ Create table meeting(
     primary key (m_id)
 );
 
+--Many To Many Relationship join between Meeting & Employee
+--Junction Table with composite key
 create table m_emp_junction
 (
   m_id int,
@@ -35,6 +40,8 @@ create table m_emp_junction
       FOREIGN KEY (e_id) REFERENCES employee (e_id)
 );
 
+--Many To Many Relationship join between Meeting & Rooms
+--Junction Table with composite key
 create table m_room_junction
 (
   m_id int,
